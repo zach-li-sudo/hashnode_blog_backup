@@ -9,6 +9,7 @@ $$
 
 1. \\(d^k=-\nabla f(x^k)\\), steepest descent
 2. \\(d^k=-\nabla^2 f(x^k)\\), Newton's method
+3. \\(d^k\approx-\nabla^2 f(x^k)\\), Quasi-Newton methods (e.g. BFGS)
 
 
 ```
