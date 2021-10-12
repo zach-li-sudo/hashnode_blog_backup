@@ -1,6 +1,6 @@
 ## My first article! Nothing but a test🍻
 
-#### Try latex support
+ #### Try latex support
 
 Descent methods:
 $$
