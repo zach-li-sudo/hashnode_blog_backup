@@ -1,5 +1,7 @@
 ## Docker Container - A Beginner's Guide 1
 
+## Docker Container - A Beginner's Guide 1
+
 ### All you need to read this article ☑️
 
 1. [Basic Linux Commands](https://hackr.io/blog/basic-linux-commands) 
@@ -32,8 +34,7 @@ The crucial advantage of Containerization is agility, which basically refers to 
 
    As VM has it own complete OS, it usually comes in Gigabytes and takes minutes to start, just like the OS in your laptop! But Containers are much lighter and they are often in Megabytes and take only a few seconds to run. 
 
-
-![Screen Shot 2021-10-12 at 10.07.51 AM.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1634021790549/cvohpSizd.png)
+![Screen Shot 2021-10-12 at 10.07.51 AM.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1634395585360/TfGKfFXdo.png)
 
 > Docker containers on my MacBook
 
@@ -265,7 +266,38 @@ The crucial advantage of Containerization is agility, which basically refers to 
    docker/getting-started   latest    083d7564d904   4 months ago   28MB
    ```
 
-   Great! Next we run containers from these images.
+   ##### Remove images
+
+   Remove images is very simple: `docker image rm image_id`. For example, to remove the first `ubuntu_upd` image from the list.
+
+   ```bash
+   $ docker image rm 30
+   Untagged: ubuntu_upd:latest
+   Deleted: sha256:306f0077378b0d92a1a6faf049c8663aeff5e1ca07227cb1ad5123f0b373d299
+   Deleted: sha256:2e7e0a83f339fe65ed52e381970b4681aaa24e598bd41ec99515c6b8f871149c
+   
+   $ docker images
+   REPOSITORY               TAG       IMAGE ID       CREATED        SIZE
+   python                   latest    618fff2bfc18   10 days ago    915MB
+   ubuntu                   latest    597ce1600cf4   2 weeks ago    72.8MB
+   ubuntu                   18.04     5a214d77f5d7   2 weeks ago    63.1MB
+   mysql                    latest    2fe463762680   2 weeks ago    514MB
+   alpine/git               latest    37ca3b12dde9   2 weeks ago    25.2MB
+   hello-world              latest    feb5d9fea6a5   3 weeks ago    13.3kB
+   docker/getting-started   latest    083d7564d904   4 months ago   28MB
+   brandoz/cc_flask_demo    latest    f5590286aad8   2 years ago    109MB
+   ```
+
+   Another option is to use `docker rmi`
+
+   ```bash
+   $ docker rmi -f 2f
+   Untagged: mysql:latest
+   Untagged: mysql@sha256:4fcf5df6c46c80db19675a5c067e737c1bc8b0e78e94e816a778ae2c6577213d
+   Deleted: sha256:2fe4637626805dc6df98d3dc17fa9b5035802dcbd3832ead172e3145cd7c07c2
+   ```
+
+   The `mysql` image is removed from your machine. Great! Next we run containers from these images.
 
    
 
@@ -332,34 +364,37 @@ The crucial advantage of Containerization is agility, which basically refers to 
    $ docker restart container_id 
    $ docker stop container_id 
    $ docker kill container_id
+   $ docker rm container_id
    ```
-
+   
    It is noted that you don't need to enter the entire ID string, but just the first two digits to identify which container you want to manipulate.
-
+   
    ```bash
    $ docker start 57
    ```
-
-   For the ubuntu container we just created with ID `57aef4b00df55bc36dbfe...e663`.
-
    
-
+   For the ubuntu container we just created with ID `57aef4b00df55bc36dbfe...e663`.
+   
+   
+   
    ##### Check Container resource information
-
+   
    - `docker top ID/Name`
-
+   
      ```bash
      $ docker top 57
      UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
      root                2088                2061                0                   06:23               ?                   00:00:00            bash
      ```
-
+   
    - `docker inspect ID/Name`
-
+   
+   - `docker stats`
+   
    ##### Access the running containers
-
+   
    If we want the access the running containers, for example, to see what's going on in our ubuntu container, use `docker attach` or `docker exec`. Then we can interact with the container, e.g. update `apt` from shell.
-
+   
    ```bash
    $ docker attach 57
    root@57aef4b00df5:/# ls
@@ -373,14 +408,14 @@ The crucial advantage of Containerization is agility, which basically refers to 
    Fetched 19.3 MB in 22s (878 kB/s)
    Reading package lists... Done
    ```
-
+   
    To exit from the container shell, just enter `exit`. Note that this will stop your container! Another option is to use `docker exec -it ID [bash/shell]`:
-
+   
    ```bash
    $ docker run -idt ubuntu
    eb2a4e3f167216ee0f037a81953ac53c341778ce43b93bb083b2784b8e3c1aeb
    $ docker exec -it eb bash
    root@eb2a4e3f1672:/#
    ```
-
+   
    
