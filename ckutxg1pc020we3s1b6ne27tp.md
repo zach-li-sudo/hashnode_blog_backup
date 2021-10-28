@@ -133,20 +133,15 @@ Lucky, we don't bother to write the `breadth_first_search()` function and draw t
 
   ```python
   import networkx as nx
+  import matplotlib.pyplot as plt
   
   num_rows = 15
   num_cols = 30
   graph_2d_grid = nx.grid_2d_graph(num_cols, num_rows)
-  
-  import matplotlib.pyplot as plt
   graph_2d_grid.pos = dict((n,n) for n in graph_2d_grid.nodes())
   
-  
-  # nx.draw_networkx(graph_2d_grid, graph_2d_grid.pos, with_labels=False, node_size=1, font_size=4)
-  # plt.savefig('grid_map_1.png', dpi=300)
   def y_reversed(map_size, node):
       return node[0], map_size[1]-node[1]
-  
   
   map_size = (num_cols, num_rows)
   start_node = y_reversed(map_size, (8, 7))
@@ -168,7 +163,6 @@ Lucky, we don't bother to write the `breadth_first_search()` function and draw t
                          node_color='red',
                          node_shape="*"
                          )
-  # plt.show()
   plt.savefig('start_goal.png', dpi=400)
   ```
 
