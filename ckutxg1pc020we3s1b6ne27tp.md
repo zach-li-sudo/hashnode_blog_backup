@@ -127,9 +127,9 @@ Lucky, we don't bother to write the `breadth_first_search()` function and draw t
 
   Here we have a 2d grid map of size $30\times15$, with unity weight for each edge in the graph.
 
-  ![grid_map]()
 
 - Mark the start and goal point, find shortest path using NetworkX built-in BFS function:
+
 
   ```python
   import networkx as nx
@@ -148,7 +148,11 @@ Lucky, we don't bother to write the `breadth_first_search()` function and draw t
   goal_node = y_reversed(map_size, (17, 2))
   
   plt.figure(1, figsize=(12, 6))
-  nx.draw_networkx(graph_2d_grid, graph_2d_grid.pos, with_labels=False, node_size=5, font_size=4)
+  nx.draw_networkx(graph_2d_grid, 
+                                  graph_2d_grid.pos, 
+                                  with_labels=False, 
+                                  node_size=5, 
+                                  font_size=4)
   nx.draw_networkx_nodes(graph_2d_grid,
                          graph_2d_grid.pos,
                          nodelist=[start_node],
@@ -165,7 +169,3 @@ Lucky, we don't bother to write the `breadth_first_search()` function and draw t
                          )
   plt.savefig('start_goal.png', dpi=400)
   ```
-
-  
-
-  ![start_goal](start_goal.png)
