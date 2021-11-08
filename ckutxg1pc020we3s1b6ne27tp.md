@@ -1,4 +1,4 @@
-## Implementation and Visualization of Breadth-First Search in Grid Maps
+## NetworkX Shortest Path
 
 ## Implementation and Visualization of Search Algorithms in Grid Maps using Python Networkx
 
@@ -8,6 +8,7 @@ Takeaway techs:
 - Python Visualization
 - Python Networkx package
 
+All code can be found in my GitHub repo: https://github.com/zach-li-sudo/pf_basics
 
 
 ### Breadth-First Search
@@ -65,25 +66,9 @@ draw_grid(g, point_to=parents, start=start, goal=goal)
 
 The grid map with obstacles will show in your shell:
 
-```python
-__________________________________________________________________________________________
- .  >  >  v  v  v  v  v  v  v  v  v  v  v  v  v  <  .  .  .  . ###### .  .  .  .  .  .  . 
- >  >  >  >  v  v  v  v  v  v  v  v  v  v  v  <  <  <  .  .  . ###### .  .  .  .  .  .  . 
- >  >  >  >  >  v  v  v  v  v  v  v  v  v  <  <  <  Z  .  .  . ###### .  .  .  .  .  .  . 
- >  >  ^ ###### v  v  v  v  v  v  v  v  <  <  <  <  <  <  .  . ###### .  .  .  .  .  .  . 
- .  ^  ^ ###### v  v  v  v  v  v  v  < ###### ^  <  <  .  .  . ###### .  .  .  .  .  .  . 
- .  .  ^ ###### >  v  v  v  v  v  <  < ###### ^  ^  .  .  .  . ############### .  .  .  . 
- .  .  . ###### >  >  v  v  v  <  <  < ###### ^  .  .  .  .  . ############### .  .  .  . 
- .  .  . ###### >  >  >  A  <  <  <  < ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- .  .  . ###### >  >  ^  ^  ^  <  <  < ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- .  .  v ###### >  ^  ^  ^  ^  ^  <  < ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- .  v  v ###### ^  ^  ^  ^  ^  ^  ^  < ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- >  >  v ###### ^  ^  ^  ^  ^  ^  ^  ^ ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- >  >  >  >  >  ^  ^  ^  ^  ^  ^  ^  ^ ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- >  >  >  >  ^  ^  ^  ^  ^  ^  ^  ^  ^ ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
- .  >  >  ^  ^  ^  ^  ^  ^  ^  ^  ^  ^ ###### .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-```
+![grid_map_a_z.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1636359036192/Ljt_875L1.png)
+
+
 
 The piece of code basically shows the shortest path from the start point $A$ $(8,7)$ to the goal point $Z$ $(17,2)$.
 
@@ -180,3 +165,5 @@ nx.draw_networkx_nodes(graph_2d_grid,
 plt.show()
 # plt.savefig('start_goal.png', dpi=400)
 ```
+
+![start_goal.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1636359116635/bh3Z2G5ZC.png)
