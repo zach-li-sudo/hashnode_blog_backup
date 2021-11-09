@@ -3,8 +3,6 @@
 Multiple robots in large warehouses need well-tailored path searching algorithms and conflict resolution mechanism to perform package pickup and delivery tasks. Here is an outline of the key points in my solution to this problem.
 
 
-## Path Generating
-
 #### Single robot path finding:
 1. A star:  [A Star Heuristic](https://zach-sudo.hashnode.dev/a-heuristic-and-dijkstra-performance-comparison) 
 2. Dijkstra:  [Dijkstra for Weighted Graphs](https://zach-sudo.hashnode.dev/dijkstras-algorithm-in-weighted-graphs) 
