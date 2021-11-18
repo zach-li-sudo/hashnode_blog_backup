@@ -17,6 +17,8 @@ Drawback: only knows when happens, cannot avoid in advance
 
 ![pred.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1636363579064/kCCzV-KZL.png)
 
+<img src="https://github.com/zach-li-sudo/mapPred/raw/master/tensor_pt/mygif.gif">
+
 
 #### Predictive path searching
 1. Path searching in dynamic heat map prediction
